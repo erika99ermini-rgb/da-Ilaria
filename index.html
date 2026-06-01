@@ -330,7 +330,10 @@ function step(){
 if(i<message.length){
 el.innerHTML+=message[i];
 i++;
-el.scrollTop = el.scrollHeight;
+const target = el.scrollHeight;
+let current = el.scrollTop;
+
+el.scrollTop = current + (target - current) * 0.08;
 setTimeout(step,17);
 }
 }
